@@ -9,19 +9,19 @@ interface Education {
   
   const educationData: Education[] = [
     { id: 1, institute: "NTNU, Trondheim", degree: "M.Sc. Electronic Systems Desgin - Signal Processing & Communciations", year: "2021-2023", image: "/images/NTNU.jpg",
-      description:`I learned about signal measurement, processing, and transmission in telecommunications, audio/video, and medical imaging,  
-      space technology, and music technology. \newline Thesis: On the cell-to-cell extracellular vesicle transmission within the brain,
-      case study: Alzheimer's disease. I mathematically described and numerically simulated (MATLAB) an end-to-end communication model 
+      description:`I learned about signal measurement, processing, and transmission in telecommunications, audio\/video, and medical imaging,  
+      space technology, and music technology. \n Thesis\: On the cell-to-cell extracellular vesicle transmission within the brain,
+      case study: Alzheimer\'s disease. I mathematically described and numerically simulated (MATLAB) an end-to-end communication model 
       within the brainusing molecular communication methodology.`},
 
     { id: 2, institute: "NTNU, Trondheim", degree: "Innovative Sustainable Energy Engineering: System Integration of Wind Power", year: "2020-2021", image: "/images/NTNU.jpg",
       description:
-      `Doing one year of this master’s program, I learned about power system analysis, energy mar-
+      `Doing one year of this master\’s program, I learned about power system analysis, energy mar-
       kets, and wind turbine design (mechanical and electrical aspects). I also gained knowledge in
       environmental impact analysis and Life Cycle Assessment`},
 
-    { id: 3, institute: "Amirkabir University of Techonlogy (Tehran's Polytechnic), Tehran", degree: "B.Sc. Electrical Engineering - Communication", year: "2014-2019", image: "/images/aut.jpg" , 
-      description: `Thesis: Simulation of Connections and Absorber in Electromagnetic Anechoic Box. 
+    { id: 3, institute: "Amirkabir University of Techonlogy (Tehran\'s Polytechnic), Tehran", degree: "B.Sc. Electrical Engineering - Communication", year: "2014-2019", image: "/images/aut.jpg" , 
+      description: `Thesis\: Simulation of Connections and Absorber in Electromagnetic Anechoic Box. 
       I designed and simulated an electromagnetic anechoic box using CST Studio and Altair FEKO. 
       I explored methods to improve its shielding effectiveness and evaluated the model using MATLAB.`},
   ];

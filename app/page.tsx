@@ -6,7 +6,6 @@ import EducationSection from './sections/educationSection';
 import WorkSection from './sections/workSection';
 import ProjectSection from './sections/projectSection';
 
-import Image from 'next/image';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<"education" | "work" | "projects" | null>(null);
