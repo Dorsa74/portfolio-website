@@ -1,100 +1,142 @@
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
+import Button from '../components/Button';
+
+import EducationSection from './sections/educationSection';
+import WorkSection from './sections/workSection';
+import ProjectSection from './sections/projectSection';
+
+import Image from 'next/image';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [activeSection, setActiveSection] = useState<"education" | "work" | "projects" | null>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  return (
+    <div className="grid grid-rows-[1fr_auto] bg-blue-100 min-h-screen p-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col w-full min-h-screen">
+        <div className="flex flex-row items-center justify-between w-full">
+          <div className="text-left w-1/2">
+            <h1 className="text-4xl md:text-7xl font-bold text-black pb-10">
+              Hi, I'm Dorsa
+            </h1>
+            <p>I have a background in electrical engineering, specializing in signal processing and communications. I enjoy solving problems and working on projects that contribute to making 
+              the world a better place. My main interests lie in programming and energy technology, with a focus on sustainability.
+            </p>
+          </div>
+          <div className="w-1/2 flex justify-center">
+            <img
+              src="/images/me.jpg"
+              alt="Profile Picture"
+              className="rounded-full w-48 h-48 object-cover shadow-xl"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="mt-40 flex flex-row gap-4 items-center w-full place-content-center">
+          <Button
+            onClick={() => setActiveSection("education")}
+            text="Education"
+            isActive={activeSection === "education"}
+          />          
+          <Button
+            onClick={() => setActiveSection("work")}
+            text="Work"
+            isActive={activeSection === "work"}
+          />
+          <Button
+            onClick={() => setActiveSection("projects")}
+            text="Projects"
+            isActive={activeSection === "projects"}
+          />
+
+        </div>
+
+        {/* Section Display */}
+        <div className="mt-10 w-full">
+          {activeSection === "education" && <EducationSection />}
+          {activeSection === "work" && <WorkSection />}
+          {activeSection === "projects" && <ProjectSection />}
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer>
+        <section id="contact" className="py-16">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold">Find me on LinkedIn:</h3>
+              <a
+                href="https://www.linkedin.com/in/yourlinkedin" // Replace with your LinkedIn URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline mt-2 inline-block"
+              >
+                linkedin.com/in/dorsa-kabiri-4208b411b
+              </a>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Send Me an Email:</h3>
+              <form action="https://formspree.io/f/mrbeaqnp" method="POST" className="w-full max-w-md mx-auto space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-left">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    className="w-full p-2 border border-gray-300 rounded"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-left">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    className="w-full p-2 border border-gray-300 rounded"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-left">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    required
+                    className="w-full p-2 border border-gray-300 rounded"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-left">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="4"
+                    required
+                    className="w-full p-2 border border-gray-300 rounded"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600 transition"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
       </footer>
     </div>
   );
