@@ -16,7 +16,7 @@ export default function Home() {
         <div className="flex flex-row items-center justify-between w-full">
           <div className="text-left w-1/2">
             <h1 className="text-4xl md:text-7xl font-bold text-black pb-10">
-              Hi, I'm Dorsa
+              Hi, I am Dorsa
             </h1>
             <p>I have a background in electrical engineering, specializing in signal processing and communications. I enjoy solving problems and working on projects that contribute to making 
               the world a better place. My main interests lie in programming and energy technology, with a focus on sustainability.
