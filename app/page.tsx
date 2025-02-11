@@ -118,7 +118,6 @@ export default function Home() {
                   <textarea
                     name="message"
                     id="message"
-                    rows="4"
                     required
                     className="w-full p-2 border border-gray-300 rounded"
                   ></textarea>
