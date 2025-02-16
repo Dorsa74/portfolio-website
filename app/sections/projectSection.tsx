@@ -48,7 +48,7 @@ const projectData: Project[] = [
 export default function ProjectSection() {
   return (
     <div className="w-full p-6 rounded-lg">
-      <h2 className="text-3xl font-bold mb-4">Education</h2>
+      <h2 className="text-3xl font-bold mb-4">Projects</h2>
       <table className="w-full border-collapse">
         <tbody>
           {projectData.map((edu) => (
