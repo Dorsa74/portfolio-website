@@ -13,7 +13,7 @@ interface Work {
        I prepare and install software packages for delivery to customers and create and update software documentation. 
       This role also involves receiving training on relevant topics, such as drilling operations and PLC controllers`
     },
-    { id: 2, institute: "Volue, Trondheim", degree: "MSc Artificial Intelligence", year: "2022-2024", image: "/images/volue.png", 
+    { id: 2, institute: "Volue, Trondheim", degree: "MSc Artificial Intelligence", year: "Jun. 2024- Aug. 2024", image: "/images/volue.png", 
       description: `During my summer internship at Volue, I worked with other interns on automation projects in
       the Energy Team. We developed a Python framework to automate power plant data manage-
       ment, validation, and visualization. This experience helped me understand power plant data,
