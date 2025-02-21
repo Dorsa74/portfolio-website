@@ -8,10 +8,8 @@ interface Project {
 
 const projectData: Project[] = [
 
-  { id: 1, institute: "NTNU, Trondheim", degree: `n the Influence of Alzheimer's Disease on Interneural Communication via Extracellular Vesicles`, year: "Autumn 2024",
-    description:`On the Influence of Alzheimer's Disease on Interneural Communication via Extracellular Vesicles}
-        {}
-        {Conference Paper based on my thesis, presented at NANOCOMM; Nanoscale Computing and Communication 2024,
+  { id: 1, institute: "NTNU, Trondheim", degree: `On the Influence of Alzheimer's Disease on Interneural Communication via Extracellular Vesicles`, year: "Autumn 2024",
+    description:`Conference Paper based on my thesis, presented at NANOCOMM; Nanoscale Computing and Communication 2024,
         \n DOI: 10.1145/3686015.3689357`},
 
 
@@ -48,23 +46,22 @@ const projectData: Project[] = [
 export default function ProjectSection() {
   return (
     <div className="w-full p-6 rounded-lg">
-      <h2 className="text-3xl font-bold mb-4">Projects</h2>
-      <table className="w-full border-collapse">
-        <tbody>
-          {projectData.map((edu) => (
-            <tr key={edu.id} className="border-b">
-              <td className="p-4 text-lg">
-                <p>{edu.degree}</p> 
-                <p className="text-base">{edu.institute}</p>
-                <p className="mt-2 text-sm text-gray-500">
-                  {edu.description}
-                </p>
-              </td>
-              <td className="p-4 text-gray-500">{edu.year}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6">Projects</h2>
+      <div className="space-y-6">
+        {projectData.map((project) => (
+          <div
+            key={project.id}
+            className="flex flex-col sm:flex-row items-center sm:items-start border-b pb-6 sm:pb-0 sm:space-x-6"
+          >
+            <div className="flex flex-col sm:flex-grow">
+              <p className="text-lg sm:text-xl font-semibold">{project.degree}</p>
+              <p className="text-sm sm:text-base text-gray-700 mt-2">{project.institute}</p>
+              <p className="text-sm sm:text-base text-gray-500 mt-2">{project.year}</p>
+              <p className="text-sm sm:text-base text-gray-600 mt-4">{project.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

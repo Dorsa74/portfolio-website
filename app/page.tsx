@@ -13,16 +13,14 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[1fr_auto] bg-blue-100 min-h-screen p-8 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col w-full min-h-screen">
-        <div className="flex flex-row items-center justify-between w-full">
-          <div className="text-left w-1/2">
-            <h1 className="text-4xl md:text-7xl font-bold text-black pb-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between w-full">
+          <div className="text-left sm:w-1/2 w-full">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black pb-10">
               Hi, I am Dorsa
             </h1>
-            <p>I have a background in electrical engineering, specializing in signal processing and communications. I enjoy solving problems and working on projects that contribute to making 
-              the world a better place. My main interests lie in programming and energy technology, with a focus on sustainability.
-            </p>
+            <p>I have a background in electrical engineering, specializing in signal processing and communications. I enjoy solving problems and working on projects that contribute to making the world a better place. My main interests lie in programming and energy technology, with a focus on sustainability.</p>
           </div>
-          <div className="w-1/2 flex justify-center">
+          <div className="sm:w-1/2 w-full flex justify-center mt-8 sm:mt-0">
             <img
               src="/images/me.jpg"
               alt="Profile Picture"
@@ -31,8 +29,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="mt-40 flex flex-row gap-4 items-center w-full place-content-center">
+        <div className="mt-40 flex flex-col sm:flex-row gap-4 items-center w-full place-content-center">
           <Button
             onClick={() => setActiveSection("education")}
             text="Education"
@@ -51,7 +48,6 @@ export default function Home() {
 
         </div>
 
-        {/* Section Display */}
         <div className="mt-10 w-full">
           {activeSection === "education" && <EducationSection />}
           {activeSection === "work" && <WorkSection />}
@@ -59,14 +55,13 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer>
         <section id="contact" className="py-16">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Me</h2>
 
             <div className="mb-8">
-              <h3 className="text-xl font-semibold">Find me on LinkedIn:</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold">Find me on LinkedIn:</h3>
               <a
                 href="https://www.linkedin.com/in/yourlinkedin" // Replace with your LinkedIn URL
                 target="_blank"
@@ -78,10 +73,10 @@ export default function Home() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4">Send Me an Email:</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4">Send Me an Email:</h3>
               <form action="https://formspree.io/f/mrbeaqnp" method="POST" className="w-full max-w-md mx-auto space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-left">Name</label>
+                  <label htmlFor="name" className="block text-left text-base sm:text-lg">Name</label>
                   <input
                     type="text"
                     name="name"
@@ -92,7 +87,7 @@ export default function Home() {
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-left">Email</label>
+                  <label htmlFor="email" className="block text-left text-base sm:text-lg">Email</label>
                   <input
                     type="email"
                     name="email"
@@ -103,7 +98,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-left">Subject</label>
+                  <label htmlFor="subject" className="block text-left text-base sm:text-lg">Subject</label>
                   <input
                     type="text"
                     name="subject"
@@ -114,7 +109,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-left">Message</label>
+                  <label htmlFor="message" className="block text-left text-base sm:text-lg">Message</label>
                   <textarea
                     name="message"
                     id="message"

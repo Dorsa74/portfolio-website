@@ -29,27 +29,32 @@ interface Education {
   export default function EducationSection() {
     return (
       <div className="w-full p-6 rounded-lg">
-        <h2 className="text-3xl font-bold mb-4">Education</h2>
-        <table className="w-full border-collapse">
-          <tbody>
-            {educationData.map((edu) => (
-              <tr key={edu.id} className="border-b">
-                <td className="pt-4 pb-4 p-1 w-1/6">
-                  <img src={edu.image} alt={edu.institute} className="w-40 h-40 rounded-full" />
-                </td>
-                <td className="p-4 text-lg">
-                  <p>{edu.degree}</p> 
-                  <p className="text-base">{edu.institute}</p>
-                  <p className="mt-2 text-sm text-gray-500">
-                    {edu.description}
-                  </p>
-                </td>
-                <td className="p-4 text-gray-500">{edu.year}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">Education</h2>
+        <div className="space-y-6">
+          {educationData.map((edu) => (
+            <div
+              key={edu.id}
+              className="flex flex-col sm:flex-row items-center sm:items-start border-b pb-6 sm:pb-0 sm:space-x-6"
+            >
+              {/* Image */}
+              <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 mb-4 sm:mb-0">
+                <img
+                  src={edu.image}
+                  alt={edu.institute}
+                  className="w-full h-full rounded-full object-cover shadow-md"
+                />
+              </div>
+  
+              {/* Education Info */}
+              <div className="flex flex-col sm:flex-grow">
+                <p className="text-lg sm:text-xl font-semibold">{edu.degree}</p>
+                <p className="text-sm sm:text-base text-gray-700 mt-2">{edu.institute}</p>
+                <p className="text-sm sm:text-base text-gray-500 mt-2">{edu.year}</p>
+                <p className="text-sm sm:text-base text-gray-600 mt-4">{edu.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
-  
