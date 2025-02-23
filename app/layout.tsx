@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Raleway, Geist_Mono} from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = Raleway({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "700"], 
 });
 
 const geistMono = Geist_Mono({
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Profile: Dorsa",
+  title: "Portfolio: Dorsa",
   description: "Portfolio Website",
 };
 

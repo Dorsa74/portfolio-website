@@ -47,23 +47,23 @@ export default function Home() {
           />
 
         </div>
-
-        <div className="mt-10 w-full">
-          {activeSection === "education" && <EducationSection />}
-          {activeSection === "work" && <WorkSection />}
-          {activeSection === "projects" && <ProjectSection />}
-        </div>
+        {activeSection && (
+          <div className="w-full text-justify leading-relaxed">
+            {activeSection === "education" && <EducationSection />}
+            {activeSection === "work" && <WorkSection />}
+            {activeSection === "projects" && <ProjectSection />}
+          </div>)
+        }
       </main>
-
       <footer>
-        <section id="contact" className="py-16">
+        <section id="contact" className="py-6">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">Contact Me</h2>
 
             <div className="mb-8">
               <h3 className="text-xl sm:text-2xl font-semibold">Find me on LinkedIn:</h3>
               <a
-                href="https://www.linkedin.com/in/yourlinkedin" // Replace with your LinkedIn URL
+                href="https://www.linkedin.com/in/dorsa-kabiri-4208b411b/en"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline mt-2 inline-block"

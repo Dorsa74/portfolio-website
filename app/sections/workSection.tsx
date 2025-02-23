@@ -7,8 +7,8 @@ interface Work {
     description: string;
   }
   
-  const educationData: Work[] = [
-    { id: 1, institute: "NOV, Stavanger", degree: "Associate Software Engineer, Pathway ", year: "Aug.2024-present", image: "/images/nov.png" , 
+  const workData: Work[] = [
+    { id: 1, institute: "NOV, Stavanger", degree: "Associate Software Engineer, Pathway ", year: "Aug.2024- Present", image: "/images/nov.png" , 
       description: `At NOV (National Oilwell Varco), I am part of the NOVOS team, focused on drilling process automation.
        I prepare and install software packages for delivery to customers and create and update software documentation. 
       This role also involves receiving training on relevant topics, such as drilling operations and PLC controllers`
@@ -28,49 +28,86 @@ interface Work {
       worker, I have done projects such as distributed systems for the industrial IoT, building automation systems, 
       image object detection, and continuous integration (CI) implementation`
      },
-     { id: 5, institute: "InPhase Solutions, Trondheim", degree: "Summer job", year: "May 2022-Aug. 2022 ", image: "/images/inphase.jpg", 
+     { id: 5, institute: "InPhase Solutions, Trondheim", degree: "Summer job", year: "May 2022- Aug. 2022 ", image: "/images/inphase.jpg", 
       description: `
       InPhase Solutions offers technology development and consultancy in ultrasound, acoustics, al-
       gorithms, and signal processing. During my summer job, I worked on the Acoustic Wire project,
       a project in collaboration with Innovation Norway. I mainly worked on the circuit design and
       simulation, modulation, and demodulation of the data signal`
      },
-     { id: 6, institute: "NTNU, Trondheim", degree: "Student Assistant", year: "Aug. 2021-Dec.2021", image: "/images/ntnu.png", 
+     { id: 6, institute: "NTNU, Trondheim", degree: "Student Assistant", year: "Aug. 2021- Dec.2021", image: "/images/ntnu.png", 
       description: `
       TEP4223 Life Cycle Assessment (LCA), TEP4175 Design of the wind turbine
       I assisted the course instructors with various tasks such as grading assignments, helping in lab
       experiments, and answering student questions on weekly TA sessions.`
      },
   ];
-  
+
+  const volunteerData: Work[] = [
+      { id: 7, institute: "ReStore, Trondheim", degree: "Volunteer", year: "July. 2021- Present", image: "/images/ReStore.png", 
+      description: `Volunteering at ReStore allowed me to contribute to meaningful activities that help the environment and students, while gaining experience
+      in teamwork, idea development, and project management. For example, as a member of the Developers team, I
+      worked on front-end development for the website, and with the ReSearch team, I helped create a carbon footprint
+      dashboard and develop an inventory app using Appsheet. As a board member, I led the ReStore project group for two semesters, organizing dugnads and opening day events, as well as participating in board meetings to make decisions for the organization`
+   },
+  ]
+
+
   export default function WorkSection() {
     return (
-      <div className="w-full p-6 rounded-lg">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-6">Work</h2>
-        <div className="space-y-6">
-          {educationData.map((edu) => (
-            <div
-              key={edu.id}
-              className="flex flex-col sm:flex-row items-center sm:items-start border-b pb-6 sm:pb-0 sm:space-x-6"
-            >
-              {/* Image */}
-              <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 mb-4 sm:mb-0">
-                <img
-                  src={edu.image}
-                  alt={edu.institute}
-                  className="w-full h-full rounded-full object-cover shadow-md"
-                />
+      <div className="w-full p-6 rounded-lg mb-5">
+          <div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10">Jobs</h2>
+          <div className="space-y-6">
+            {workData.map((edu) => (
+              <div
+                key={edu.id}
+                className="flex flex-col sm:flex-row items-center sm:items-start border-b pb-6 sm:pb-0 sm:space-x-6"
+              >
+                <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 mb-4 sm:mb-0">
+                  <img
+                    src={edu.image}
+                    alt={edu.institute}
+                    className="w-full h-full rounded-full object-cover shadow-md"
+                  />
+                </div>
+    
+                <div className="flex flex-col sm:flex-grow">
+                  <p className="text-lg sm:text-xl font-semibold">{edu.degree}</p>
+                  <p className="text-sm sm:text-base text-gray-700 mt-2">{edu.institute}</p>
+                  <p className="text-sm sm:text-base text-gray-500 mt-2">{edu.year}</p>
+                  <p className="text-sm sm:text-base text-gray-600 mt-4">{edu.description}</p>
+                </div>
               </div>
-  
-              {/* Work Info */}
-              <div className="flex flex-col sm:flex-grow">
-                <p className="text-lg sm:text-xl font-semibold">{edu.degree}</p>
-                <p className="text-sm sm:text-base text-gray-700 mt-2">{edu.institute}</p>
-                <p className="text-sm sm:text-base text-gray-500 mt-2">{edu.year}</p>
-                <p className="text-sm sm:text-base text-gray-600 mt-4">{edu.description}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className='mt-20'>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Volunteer Experience</h2>
+          <div className="space-y-10">
+            {volunteerData.map((edu) => (
+              <div
+                key={edu.id}
+                className="flex flex-col sm:flex-row items-center sm:items-start border-b pb-6 sm:pb-0 sm:space-x-6"
+              >
+                <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 mb-4 sm:mb-0">
+                  <img
+                    src={edu.image}
+                    alt={edu.institute}
+                    className="w-full h-full rounded-full object-cover shadow-md"
+                  />
+                </div>
+    
+                <div className="flex flex-col sm:flex-grow">
+                  <p className="text-lg sm:text-xl font-semibold">{edu.degree}</p>
+                  <p className="text-sm sm:text-base text-gray-700 mt-2">{edu.institute}</p>
+                  <p className="text-sm sm:text-base text-gray-500 mt-2">{edu.year}</p>
+                  <p className="text-sm sm:text-base text-gray-600 mt-4">{edu.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     );

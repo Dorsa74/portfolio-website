@@ -12,7 +12,6 @@ const projectData: Project[] = [
     description:`Conference Paper based on my thesis, presented at NANOCOMM; Nanoscale Computing and Communication 2024,
         \n DOI: 10.1145/3686015.3689357`},
 
-
   { id: 2, institute: "NTNU, Trondheim", degree: `Sensors anomaly detection, isolation, identification for digital twins using
     model-based approach`, year: "Autumn 2022",
     description:` The main objective of this project is developing a modelbased
