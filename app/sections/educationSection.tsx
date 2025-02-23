@@ -36,7 +36,6 @@ interface Education {
               key={edu.id}
               className="flex flex-col sm:flex-row items-center sm:items-start border-b pb-6 sm:pb-0 sm:space-x-6"
             >
-              {/* Image */}
               <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 mb-4 sm:mb-0">
                 <img
                   src={edu.image}
@@ -45,7 +44,6 @@ interface Education {
                 />
               </div>
   
-              {/* Education Info */}
               <div className="flex flex-col sm:flex-grow">
                 <p className="text-lg sm:text-xl font-semibold">{edu.degree}</p>
                 <p className="text-sm sm:text-base text-gray-700 mt-2">{edu.institute}</p>
