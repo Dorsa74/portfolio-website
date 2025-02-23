@@ -6,6 +6,8 @@ import EducationSection from './sections/educationSection';
 import WorkSection from './sections/workSection';
 import ProjectSection from './sections/projectSection';
 
+import Link from "next/link";
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<"education" | "work" | "projects" | null>(null);
@@ -15,7 +17,7 @@ export default function Home() {
       <main className="flex flex-col w-full min-h-screen">
         <div className="flex flex-col sm:flex-row items-center justify-between w-full">
           <div className="text-left sm:w-1/2 w-full">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black pb-10">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-800 pb-10">
               Hi, I am Dorsa
             </h1>
             <p>I have a background in electrical engineering, specializing in signal processing and communications. I enjoy solving problems and working on projects that contribute to making the world a better place. My main interests lie in programming and energy technology, with a focus on sustainability.</p>
@@ -24,7 +26,7 @@ export default function Home() {
             <img
               src="/images/me.jpg"
               alt="Profile Picture"
-              className="rounded-full w-48 h-48 object-cover shadow-xl"
+              className="rounded-full w-60 h-60 object-cover shadow-xl"
             />
           </div>
         </div>
@@ -127,6 +129,19 @@ export default function Home() {
                   </button>
                 </div>
               </form>
+              <div className="text-center p-4 mt-20">
+                <p className="text-gray-800">
+                  Check out website source code on{" "}
+                  <Link
+                    href="https://github.com/Dorsa74/portfolio-website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline font-medium"
+                  >
+                    my GitHub
+                  </Link>.
+              </p>
+            </div>
             </div>
           </div>
         </section>

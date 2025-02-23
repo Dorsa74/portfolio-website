@@ -18,7 +18,7 @@ interface Education {
       description:
       `Doing one year of this master\’s program, I learned about power system analysis, energy mar-
       kets, and wind turbine design (mechanical and electrical aspects). I also gained knowledge in
-      environmental impact analysis and Life Cycle Assessment`},
+      environmental impact analysis and Life Cycle Assessment.`},
 
     { id: 3, institute: "Amirkabir University of Techonlogy (Tehran\'s Polytechnic), Tehran", degree: "B.Sc. Electrical Engineering - Communication", year: "2014-2019", image: "/images/aut.jpg" , 
       description: `Thesis\: Simulation of Connections and Absorber in Electromagnetic Anechoic Box. 
