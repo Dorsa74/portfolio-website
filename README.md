@@ -1,4 +1,4 @@
-*A modern and responsive portfolio built with [Next.js](https://nextjs.org) and TailwindCSS.* 
+*This is my portfolio built with [Next.js](https://nextjs.org) and TailwindCSS.* 
 
 🔗 Live Demo:  [View Portfolio](https://portfolio-website-gamma-ecru-18.vercel.app/)
 
